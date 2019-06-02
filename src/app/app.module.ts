@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -16,6 +16,10 @@ import { OfertaComponent } from './oferta/oferta.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 
+import { DescricaoReduzida } from './util/descricao-resumida.pipe';
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
+import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,10 @@ import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
     DiversaoComponent,
     OfertaComponent,
     OndeFicaComponent,
-    ComoUsarComponent
+    ComoUsarComponent,
+    DescricaoReduzida,
+    OrdemCompraComponent,
+    OrdemCompraSucessoComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,7 @@ import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [ /*{ provide: LOCALE_ID, useValue: 'pt-Br'}*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
